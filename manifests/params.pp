@@ -51,4 +51,5 @@ class foreman::params {
     }
   }
   $puppet_home = '/var/lib/puppet'
+  $http_domain = $::fqdn
 }
