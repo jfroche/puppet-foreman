@@ -1,4 +1,4 @@
-<VirtualHost <%= ipaddress %>:80>
+<VirtualHost <%= scope.lookupvar 'foreman::vhost_address' %>>
   ServerName <%= scope.lookupvar 'foreman::http_domain' %>
   ServerAlias foreman
   DocumentRoot <%= scope.lookupvar 'foreman::app_root' %>/public

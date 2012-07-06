@@ -18,7 +18,11 @@ class foreman (
   $puppet_basedir  = $foreman::params::puppet_basedir,
   $apache_conf_dir = $foreman::params::apache_conf_dir,
   $puppet_home     = $foreman::params::puppet_home,
-  $http_domain     = $foreman::params::http_domain
+  $http_domain     = $foreman::params::http_domain,
+  $vhost_address   = $foreman::params::http_domain,
+  $db_name         = $foreman::params::db_name,
+  $db_username     = $foreman::params::db_username,
+  $db_password     = $foreman::params::db_password
 ) inherits foreman::params {
   class { 'foreman::install': } ~>
   class { 'foreman::config': } ~>

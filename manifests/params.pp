@@ -52,4 +52,8 @@ class foreman::params {
   }
   $puppet_home = '/var/lib/puppet'
   $http_domain = $::fqdn
+  $vhost_address = '*'
+  $db_name = 'puppet'
+  $db_username = 'puppet'
+  $db_password = ''
 }
