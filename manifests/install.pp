@@ -13,7 +13,7 @@ class foreman::install {
 
   case $::operatingsystem {
     Debian,Ubuntu:  {
-      package {'foreman-sqlite3':
+      package {'foreman-pgsql':
         ensure  => latest,
         require => $repo,
         notify  => [Class['foreman::service'],

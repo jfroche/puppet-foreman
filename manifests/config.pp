@@ -23,7 +23,7 @@ class foreman::config {
           notify  => Class['foreman::service'],
           owner   => $foreman::user,
           require => [User[$foreman::user],
-          Package['foreman-sqlite3']],
+          Package['foreman-pgsql']],
         }
       }
       default: { }
