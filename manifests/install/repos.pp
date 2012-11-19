@@ -1,5 +1,6 @@
 define foreman::install::repos(
   $use_testing    = false,
+  $dist           = 'squeeze',
   $package_source = 'stable'
 ) {
   case $::operatingsystem {
@@ -23,7 +24,7 @@ define foreman::install::repos(
     }
     Debian,Ubuntu: {
       file { "/etc/apt/sources.list.d/$name.list":
-        content => "deb http://deb.theforeman.org/ $package_source main\n"
+        content => "deb http://deb.theforeman.org/ $dist $package_source\n"
       }
       ~>
       exec { "foreman-key-$name":
